@@ -9,6 +9,20 @@
 
 ## Introduction
 
+## ✅ What is a Unit Test?
+
+Unit - A single, identifiable, piece of logic. i.e., a method, set of methods or a class.
+
+Unit Test - A test to validate a unit is working correctly.
+
+- A unit test corresponds to a single scenario for a single piece of logic.
+
+- For each unit there are typically many unit tests.
+
+You may contrast this approach with testing a system end-to-end, e.g. including external modules and components like databases. This is called integration testing, and is not what we will be focusing on in this lab.
+
+A unit test should be fast and repeatable. A complete set of unit tests should be easy to run, complete and up-to-date. Together these will give you courage to refactor bad code into good code without fear of breaking functionality.
+
 # 🧪 What is JUnit?
 
 **JUnit** is a **popular open-source testing framework** for the Java programming language. It is widely used for writing and running **automated unit tests**, which help ensure that individual parts of a program (called *units*) work as intended.
@@ -44,6 +58,33 @@ When working in teams, automated tests make sure that code changes by one person
 
 ---
 
-## 🧠 TL;DR
+## ✅ JUnit Procedure
+Let's create an example of a Calculator and run some tests against it.
 
-> **JUnit helps you catch bugs early, write better Java code, and work more confidently as a developer.**
+## 📦 Prerequisites
+
+Make sure you have the following installed:
+
+- [Java JDK 11+](https://adoptopenjdk.net/)  This should be installed on the lab machines
+- [VSCode](https://code.visualstudio.com/)
+- VSCode Extensions:
+  - **Java Extension Pack** (from Microsoft)
+  - **Test Runner for Java** (You need this to run tests and debug inside VSCode)
+- [JUnit 5 Standalone JAR](https://search.maven.org/artifact/org.junit.platform/junit-platform-console-standalone/1.7.0/all)  This will be downloaded from the site automatically when using VSCode.
+
+---
+
+## 📁 Project Structure
+
+Here's a simple structure for your project:
+
+```
+your-project/
+├── bin/                        # Compiled classes go here
+├── lib/                        # JUnit JAR goes here
+├── src/
+│   └── Main.java               # Your main application (optional)
+├── test/
+│   └── LoginTest.java          # Your JUnit test file(s)
+```
+
