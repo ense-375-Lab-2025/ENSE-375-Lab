@@ -246,7 +246,7 @@ You are to create a **Coffee Maker Simulation**. This coffee maker can store up 
 - Make some coffee. Remember that your inventory should go down depending on the recipe being made.
 - Initialization of variables in your classes should be done in your constructors.
 
-### Deliverables
+## Procedure
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
 
 ## Deliverables
