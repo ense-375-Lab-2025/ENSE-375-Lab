@@ -83,8 +83,78 @@ your-project/
 ├── bin/                        # Compiled classes go here
 ├── lib/                        # JUnit JAR goes here
 ├── src/
-│   └── Main.java               # Your main application (optional)
+│   └── Calculator.java               # Your main application (optional)
 ├── test/
-│   └── LoginTest.java          # Your JUnit test file(s)
+│   └── CalculatorTest.java          # Your JUnit test file(s)
 ```
 
+### ✅  Step 1: Create the Calculator Class src/Calculator.java
+```java
+public class Calculator {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public double divide(int a, int b) {
+        if (b == 0) throw new ArithmeticException("Cannot divide by zero");
+        return (double) a / b;
+    }
+}
+```
+### ✅ Step 2: Create the Calculator Test Case test/CalculatorTest.java
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculatorTest {
+
+    Calculator calculator = new Calculator();
+
+    @Test
+    void testAddition() {
+        assertEquals(5, calculator.add(2, 3));
+    }
+
+    @Test
+    void testSubtraction() {
+        assertEquals(1, calculator.subtract(4, 3));
+    }
+
+    @Test
+    void testMultiplication() {
+        assertEquals(12, calculator.multiply(3, 4));
+    }
+
+    @Test
+    void testDivision() {
+        assertEquals(2.0, calculator.divide(10, 5));
+    }
+
+    @Test
+    void testDivideByZero() {
+        assertThrows(ArithmeticException.class, () -> {
+            calculator.divide(10, 0);
+        });
+    }
+}
+```
+### ✅ Step 3: Run Tests in VS Code
+
+If you’re using VS Code:
+	1.	Ensure that the Java Extension Pack is installed.
+  2.  Ensure that the Test Runner of Java Extension is installed.
+	3.	Open the project folder.  This means that you need to open VSCode at the root of your project.
+  4.  Errors will likely be indicated.  This is because the JUnit jar file needs to be included in your project.  You may also have to adjust the classpath to include the /src folder.  Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on Mac) Type: Java: Configure Classpath and add the /src folder.
+  5.  Click on the Test java file and a beaker icon should be on the left.  This is the testing section.
+  6.  Click on the beaker and select Enable Java Tests.  Now select JUnit 5.  This will download the JUnit jar file into the lib directory.
+	7.	Run your tests.
+ 
