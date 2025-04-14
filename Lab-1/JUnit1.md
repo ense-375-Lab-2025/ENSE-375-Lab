@@ -148,13 +148,53 @@ public class CalculatorTest {
 }
 ```
 ### ✅ Step 3: Run Tests in VS Code
+#### 1. Install Required Extensions
 
-If you’re using VS Code:
-	1.	Ensure that the Java Extension Pack is installed.
-  2.  Ensure that the Test Runner of Java Extension is installed.
-	3.	Open the project folder.  This means that you need to open VSCode at the root of your project.
-  4.  Errors will likely be indicated.  This is because the JUnit jar file needs to be included in your project.  You may also have to adjust the classpath to include the /src folder.  Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on Mac) Type: Java: Configure Classpath and add the /src folder.
-  5.  Click on the Test java file and a beaker icon should be on the left.  This is the testing section.
-  6.  Click on the beaker and select Enable Java Tests.  Now select JUnit 5.  This will download the JUnit jar file into the lib directory.
-	7.	Run your tests.
- 
+Make sure these extensions are installed from the VS Code Marketplace:
+- **Java Extension Pack**
+- **Test Runner for Java**
+
+---
+
+#### 2. Open the Project Folder
+
+Open the root folder of your project (e.g., `CalculatorApp/`) in VS Code.
+
+> ⚠️ Don’t open just the `src/` or `test/` make sure VSCode is at the **entire project folder**.
+
+---
+
+#### 3. Fix Classpath & Errors
+
+If you see red errors (especially in the test file), it’s usually because:
+- JUnit isn’t available yet  
+- VS Code doesn’t know where to look for your source files
+
+To fix this:
+
+1. Open the **Command Palette** (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac)  
+2. Search for: `Java: Configure Classpath`  
+3. Add the `/src` and `/test` folders
+
+
+---
+
+#### 4. Enable Java Tests
+
+1. Click on `CalculatorTest.java`  
+2. Look for the beaker icon in the left Activity Bar (Test Explorer)  
+3. Click it and choose **Enable Java Tests**  
+4. Select **JUnit 5** when prompted
+
+This will:
+- Download the JUnit 5 `.jar` files into a `lib/` folder  
+- Set them up automatically for the project
+
+---
+
+#### 5. Run Your Tests
+
+- In the test file, click **Run** above a test method or class  
+- Or use the **Test Explorer** (from the beaker icon) to run all tests
+
+
