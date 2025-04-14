@@ -23,11 +23,9 @@ You may contrast this approach with testing a system end-to-end, e.g. including 
 
 A unit test should be fast and repeatable. A complete set of unit tests should be easy to run, complete and up-to-date. Together these will give you courage to refactor bad code into good code without fear of breaking functionality.
 
-# 🧪 What is JUnit?
+## 🧪 What is JUnit?
 
 **JUnit** is a **popular open-source testing framework** for the Java programming language. It is widely used for writing and running **automated unit tests**, which help ensure that individual parts of a program (called *units*) work as intended.
-
----
 
 ## ✅ What is JUnit Good For?
 
@@ -59,7 +57,6 @@ When working in teams, automated tests make sure that code changes by one person
 ---
 
 ## ✅ JUnit Procedure
-Let's create an example of a Calculator and run some tests against it.
 
 ## 📦 Prerequisites
 Make sure you have the following installed:
