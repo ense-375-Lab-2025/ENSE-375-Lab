@@ -62,7 +62,6 @@ When working in teams, automated tests make sure that code changes by one person
 Let's create an example of a Calculator and run some tests against it.
 
 ## 📦 Prerequisites
-
 Make sure you have the following installed:
 
 - [Java JDK 11+](https://adoptopenjdk.net/)  This should be installed on the lab machines
@@ -74,18 +73,19 @@ Make sure you have the following installed:
 
 ---
 
-## 📁 Project Structure
+## Calculator Assignment example.
+The first lab assignment you have is to make sure that you can click the link on URCourses and access the assignent through our GitHub classroom.  Clone the template repository to use and make sure you can run through the sample.
 
+## 📁 Project Structure
 Here's a simple structure for your project:
 
 ```
 your-project/
-├── bin/                        # Compiled classes go here
-├── lib/                        # JUnit JAR goes here
+├── lib/                                # JUnit JAR goes here
 ├── src/
-│   └── Calculator.java               # Your main application (optional)
+│   └── Calculator.java                 # Your main application (optional)
 ├── test/
-│   └── CalculatorTest.java          # Your JUnit test file(s)
+│   └── CalculatorTest.java             # Your JUnit test file(s)
 ```
 
 ### ✅  Step 1: Create the Calculator Class src/Calculator.java
@@ -198,3 +198,59 @@ This will:
 - Or use the **Test Explorer** (from the beaker icon) to run all tests
 
 
+## Assertions
+From here, it is a good idea to take a run through the different Asserts to see what JUnit 5 is capable of. You can find these [here](https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html). Some of the major families of assert functions:
+
+- assertEquals
+- assertNotEquals
+- assertTrue
+- assertFalse
+- assertNull
+- assertNotNull
+- assertSame
+- assertNotSame
+- assertThrows  (exceptions)
+
+For each of these, we may add an additional String argument at the end which will print to the console if the test fails.
+
+---
+## 📘 What is JavaDocs?
+
+**JavaDocs** is a tool built into the Java Development Kit (JDK) that allows developers to generate **HTML documentation** from specially formatted comments in Java source code.
+
+This documentation is helpful for:
+- Explaining how classes, methods, and fields work
+- Making your code easier to understand and use (by others or by you later)
+- Creating API documentation like what you see for Java libraries
+
+---
+
+## 📝 Writing JavaDoc Comments
+
+JavaDoc comments are written using `/** ... */` syntax **just before** the class, method, or field you want to document.
+
+### 🔹 For a class:
+
+```java
+/**
+ * This class represents a simple calculator.
+ * It can perform basic arithmetic operations.
+ */
+public class Calculator {
+    ...
+}
+```
+---
+## Assignment
+You are to create a **Coffee Maker Simulation**. This coffee maker can store up to 4 recipes in its memory. A recipe is made up of coffee, milk, and sugar in units of parts. For example: my favourite recipe would be 2 parts coffee, 2 parts milk, 2 parts sugar (my version of the tall double double). The coffee maker has reservoirs to hold the coffee, milk, and sugar. Your program must have the following features:
+
+- Be able to add and delete recipes. You should indicate to the user any problems or success.
+- Your coffee maker must hold 4 recipes and have 20 units of coffee, milk, and sugar in its inventory. The inventory should be filled in the constructor.
+- Make some coffee. Remember that your inventory should go down depending on the recipe being made.
+- Initialization of variables in your classes should be done in your constructors.
+
+### Deliverables
+You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
+
+## Deliverables
+Use the link to the Lab 1 Assignment on URCourses.  Included will be a template repository that will include JavaDocs detailing how to create the application code.  This will allow you to create your own assignment repository and this is where you will put your submission.
