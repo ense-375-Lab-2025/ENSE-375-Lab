@@ -1,52 +1,51 @@
-"Movie Title","Genre"
-"All Of Us Strangers","Drama, Fantasy, Romance"
-"Anora","Drama"
-"Beetlejuice Beetlejuice","Comedy, Fantasy"
-"Blink Twice","Thriller"
-"Boy Kills World","Action, Thriller"
-"Challengers","Drama, Romance, Sport"
-"Close Your Eyes","Drama, Mystery"
-"Conclave","Drama, Thriller"
-"Deadpool & Wolverine","Action, Comedy, Sci-Fi"
-"Driving Madeleine","Comedy, Drama"
-"Dune: Part Two","Adventure, Drama, Sci-Fi"
-"Fitting In","Comedy, Drama"
-"Furiosa: A Mad Max Saga","Action, Adventure, Sci-Fi"
-"Gasoline Rainbow","Drama"
-"Gladiator II","Action, Drama"
-"Guardians of the Galaxy Vol. 3","Action, Adventure, Comedy"
-"Hard Truths","Drama"
-"Hit Man","Action, Comedy, Crime"
-"Hoard","Drama"
-"Immaculate","Horror, Thriller"
-"Joy","Biography, Drama"
-"Juror #2","Drama, Thriller"
-"Kubo and the Two Strings","Animation, Adventure, Family"
-"Late Night with the Devil","Horror"
-"Limbo","Crime, Drama, Mystery"
-"Love Lies Bleeding","Romance, Thriller"
-"Matilda","Comedy, Drama, Family"
-"Nosferatu","Horror"
-"Oppenheimer","Biography, Drama, History"
-"Orion and the Dark","Animation, Adventure, Comedy"
-"Queer","Drama"
-"Rebel Ridge","Action, Thriller"
-"Red Rooms","Thriller"
-"Sing Sing","Drama"
-"Smile 2","Horror, Thriller"
-"Sonic the Hedgehog 3","Action, Adventure, Comedy"
-"Spider-Man: Across the Spider-Verse","Animation, Action, Adventure"
-"Susie Searches","Comedy, Mystery, Thriller"
-"The Beast","Drama, Romance, Sci-Fi"
-"The Brutalist","Drama"
-"The Croods","Animation, Adventure, Comedy"
-"The First Omen","Horror"
-"The Kitchen","Drama, Sci-Fi"
-"The Monk and the Gun","Comedy, Drama"
-"The Settlers","Drama, Western"
-"The Substance","Horror, Sci-Fi"
-"The Wild Robot","Animation, Adventure, Family"
-"Thelma","Action, Comedy"
-"Totally Killer","Comedy, Horror"
-"Twisters","Action, Adventure, Thriller"
-"Wicked","Drama, Fantasy, Musical"
+Title,Genres,Year
+"Mad Max: Fury Road","Action, Adventure, Sci-Fi",2015
+"Spider-Man: Into the Spider-Verse","Animation, Action, Adventure",2018
+"Get Out","Horror, Mystery, Thriller",2017
+"Parasite","Comedy, Drama, Thriller",2019
+"Moonlight","Drama",2016
+"La La Land","Comedy, Drama, Music",2016
+"Arrival","Drama, Sci-Fi",2016
+"Ex Machina","Drama, Sci-Fi, Thriller",2015
+"Whiplash","Drama, Music",2014
+"The Babadook","Drama, Horror, Mystery",2014
+"Baby Driver","Action, Crime, Drama",2017
+"Call Me by Your Name","Drama, Romance",2017
+"Burning","Drama, Mystery",2018
+"Brooklyn","Drama, Romance",2015
+"Avengers: Endgame","Action, Adventure, Drama",2019
+"Avengers: Infinity War","Action, Adventure, Sci-Fi",2018
+"The Power of the Dog","Drama, Romance, Western",2021
+"Judas and the Black Messiah","Biography, Drama, History",2021
+"The Worst Person in the World","Comedy, Drama, Romance",2021
+"TÁR","Drama, Music",2022
+"Pig","Drama",2021
+"The Holdovers","Comedy, Drama",2023
+"Emily the Criminal","Crime, Drama, Thriller",2022
+"The Fabelmans","Drama",2022
+"The Zone of Interest","Drama, History, War",2023
+"Red Rocket","Comedy, Drama",2021
+"Barbarian","Horror, Thriller",2022
+"John Wick","Action, Crime, Thriller",2014
+"Blackberry","Biography, Comedy, Drama",2023
+"How to Blow Up a Pipeline","Crime, Drama, Thriller",2022
+"Boiling Point","Drama, Thriller",2021
+"How to Have Sex","Drama",2023
+"Uncut Gems","Crime, Drama, Thriller",2019
+"Phantom Thread","Drama, Romance",2017
+"Us","Horror, Mystery, Thriller",2019
+"Knives Out","Comedy, Crime, Drama",2019
+"The Irishman","Biography, Crime, Drama",2019
+"Marriage Story","Drama, Romance",2019
+"Ford v Ferrari","Action, Biography, Drama",2019
+"Free Solo","Documentary, Adventure, Sport",2018
+"Manchester by the Sea","Drama",2016
+"The Martian","Adventure, Drama, Sci-Fi",2015
+"Inside Out","Animation, Adventure, Comedy",2015
+"Isle of Dogs","Animation, Adventure, Comedy",2018
+"Hereditary","Drama, Horror, Mystery",2018
+"The Favourite","Biography, Comedy, Drama",2018
+"First Reformed","Drama, Mystery, Thriller",2017
+"The Florida Project","Drama",2017
+"Frances Ha","Comedy, Drama, Romance",2012
+"Good Time","Crime, Drama, Thriller",2017
