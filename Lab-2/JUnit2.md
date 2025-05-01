@@ -132,5 +132,12 @@ void tearDown() {
 ```
 
 ---
+## Procedure
+You are to create a **Movie Recommender Simulation**. 
 
+## Assignment
+You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
+
+## Deliverables
+Use the link to the Lab 2 Assignment on URCourses.  
 
