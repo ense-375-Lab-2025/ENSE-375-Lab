@@ -1,6 +1,6 @@
 ## ENSE 375 - Software Testing and Validation - Laboratory
 
-# Lab 2: JUnit Part 2
+# Lab 2: JUnit Part 2 and Maven
 
 ### University of Regina
 ### Faculty of Engineering and Applied Science - Software Systems Engineering
@@ -8,8 +8,7 @@
 ### Lab Instructor: [Trevor Douglas](mailto:trevor.douglas@uregina.ca)
 
 ## Objective
-Introduce students to a powerful build automation tool, while also providing hands-on experience in writing unit tests for applications. Additionally, familiarize them with the principles of Test-Driven Development (TDD) to promote writing tests before coding, fostering better design and code quality.
-
+Introduce students to a powerful build automation tool, while also providing hands-on experience in writing unit tests for an application. 
 
 ## What is Maven?
 
@@ -88,3 +87,50 @@ In this example, Maven knows to:
 - It is widely used in Java-based applications, and also supports other languages and tools.
 
 For more information, you can visit the [official Maven website](https://maven.apache.org).
+
+## 📘 JUnit 5 Annotations Cheat Sheet
+
+JUnit annotations define **how test methods behave**, when they run, and how they are organized.
+
+---
+
+### ✅ Basic Test Annotations
+
+| Annotation              | Description |
+|-------------------------|-------------|
+| `@Test`                 | Marks a method as a test method. |
+| `@DisplayName("...")`   | Sets a custom name for the test (for better readability in test reports). |
+
+```java
+@Test
+@DisplayName("Adding 2 and 3 should return 5")
+void testAddition() {
+    assertEquals(5, new Calculator().add(2, 3));
+}
+```
+---
+
+## 🔁 Lifecycle Annotations
+
+| Annotation              | Runs... |
+|-------------------------|---------|
+| `@BeforeEach`           | Before **each** test method. Used for setup. |
+| `@AfterEach`            | After **each** test method. Used for cleanup. |
+| `@BeforeAll`            | Once **before all** tests in the class (must be static). |
+| `@AfterAll`             | Once **after all** tests in the class (must be static). |
+
+```java
+@BeforeEach
+void init() {
+    calc = new Calculator();
+}
+
+@AfterEach
+void tearDown() {
+    calc = null;
+}
+```
+
+---
+
+
