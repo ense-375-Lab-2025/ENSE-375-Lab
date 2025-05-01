@@ -238,7 +238,7 @@ public class Calculator {
 }
 ```
 ---
-## Assignment
+## Procedure
 You are to create a **Coffee Maker Simulation**. This coffee maker can store up to 4 recipes in its memory. A recipe is made up of coffee, milk, and sugar in units of parts. For example: my favourite recipe would be 2 parts coffee, 2 parts milk, 2 parts sugar (my version of the tall double double). The coffee maker has reservoirs to hold the coffee, milk, and sugar. Your program must have the following features:
 
 - Be able to add and delete recipes. You should indicate to the user any problems or success.
@@ -246,7 +246,7 @@ You are to create a **Coffee Maker Simulation**. This coffee maker can store up 
 - Make some coffee. Remember that your inventory should go down depending on the recipe being made.
 - Initialization of variables in your classes should be done in your constructors.
 
-## Procedure
+## Assignment
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
 
 ## Deliverables
