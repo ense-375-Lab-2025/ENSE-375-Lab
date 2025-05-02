@@ -133,7 +133,120 @@ void tearDown() {
 
 ---
 ## Procedure
-You are to create a **Movie Recommender Simulation**. 
+You are to create a **Movie Recommender Simulation** in Java using Maven as a build environment and JUnit to test the application.
+
+### 🔧 Step 1: Install Required Extensions in VSCode
+
+1. **Open VSCode.**
+2. Go to the **Extensions view** .
+3. Search and install the following:
+
+Ensure you have JDK version 17 installed.  In the lab machines this is the case.
+
+#### 🔹 [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+This pack includes:
+- Language Support for Java™ by Red Hat
+- Debugger for Java
+- Maven for Java
+- Java Test Runner
+- Java Dependency Viewer
+
+Once installed, **reload** VSCode if prompted.
+
+---
+### 🧱 Step 2: Create a Maven Project (No Terminal)
+
+1. Open **VSCode**:  
+   One the left menu click the Folders icon.
+
+2. Click Create Java Project
+
+3. Select:
+   - **Archetype**: Choose `maven-archetype-quickstart`
+   - **Version**: Use the latest
+   - **Group Id**: `com.example`
+   - **Artifact Id**: `junit-tutorial`
+
+4. Choose a folder to save the project.
+5. Select the default 'version'
+6. Confirm your configured properties.
+
+✅ VSCode will automatically prompt to open the newly created project.
+
+---
+
+### 📦 Step 3: Ensure the proper JDK version.
+
+1. In the **Explorer** (left sidebar), open `pom.xml`.
+2. Ensure the maven.compiler.source is 17.  I have seen that it sometimes is 1.7
+
+```xml
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+```
+3. Save the file.
+
+4. In the **Maven Projects** view (click the **M** icon in the sidebar), right-click your project and select:
+   - `Reload Project` or `Update Project`
+
+This ensures Maven downloads all dependencies.
+
+---
+
+### 📦 Step 4: Add JUnit to the Project
+
+1. In the **Explorer** (left sidebar), open `pom.xml`.
+2. Add this inside the `<dependencies>` tag:
+
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.10.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
+> 📝 If there's already a JUnit 4 dependency, remove it to avoid conflicts.
+
+3. Save the file.
+
+4. In the **Maven Projects** view (click the **M** icon in the sidebar), right-click your project and select:
+   - `Reload Project` or `Update Project`
+
+This ensures Maven downloads all dependencies.
+
+---
+Have to edit the following....
+
+---
+
+## 🧪 Step 5: Run the default test.
+
+1. In the folder: `src/test/java/com/example/`, open `AppTest.java`.
+
+## ▶️ Step 6: Run the Tests from VSCode (No CLI)
+
+### Option 1: Use the Testing Sidebar
+
+1. Click the **Testing** icon (🧪) in the sidebar.
+2. You’ll see your test class and test methods listed.
+3. Click the **play ▶️ icon** next to each test or run all tests.
+
+### Option 2: Right-Click in Code
+
+1. Inside any test method, right-click and choose:
+   - **Run Test** or **Debug Test**
+
+VSCode will show test results in the **Test Output Panel**.
+
+---
+
+## 🎉 Done!
+
 
 ## Assignment
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
