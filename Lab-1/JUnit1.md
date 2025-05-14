@@ -237,6 +237,17 @@ public class Calculator {
     ...
 }
 ```
+In order to create javadocs from the command line use the following command:
+
+```bash
+javadoc -d doc -sourcepath src -subpackages your.package.name
+
+```
+#### Replace:
+- doc with the output directory you want for the HTML files.
+- src with the path to your source folder.
+- your.package.name with your actual package name, or use . for all packages.
+
 ---
 ## Procedure
 You are to create a **Coffee Maker Simulation**. This coffee maker can store up to 4 recipes in its memory. A recipe is made up of coffee, milk, and sugar in units of parts. For example: my favourite recipe would be 2 parts coffee, 2 parts milk, 2 parts sugar (my version of the tall double double). The coffee maker has reservoirs to hold the coffee, milk, and sugar. Your program must have the following features:
@@ -245,9 +256,13 @@ You are to create a **Coffee Maker Simulation**. This coffee maker can store up 
 - Your coffee maker must hold 4 recipes and have 20 units of coffee, milk, and sugar in its inventory. The inventory should be filled in the constructor.
 - Make some coffee. Remember that your inventory should go down depending on the recipe being made.
 - Initialization of variables in your classes should be done in your constructors.
+- Generate JavaDocs for the source code given to you.
+- Use the link to the Lab 1 Assignment on URCourses.  This is a link to the assignemnt in GitHub Classroom.  A GitHub template will be provide to you.
+ 
 
 ## Assignment
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
 
+
 ## Deliverables
-Use the link to the Lab 1 Assignment on URCourses.  Included will be a template repository that will include JavaDocs detailing how to create the application code.  This will allow you to create your own assignment repository and this is where you will put your submission.
+Use your repository when creating your test code and make sure you have everything committed by the due date.
