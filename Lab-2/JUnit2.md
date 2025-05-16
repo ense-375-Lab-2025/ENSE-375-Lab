@@ -180,7 +180,7 @@ Once installed, **reload** VSCode if prompted.
 ### 📦 Step 3: Ensure the proper JDK version.
 
 1. In the **Explorer** (left sidebar), open `pom.xml`.
-2. Ensure the maven.compiler.source is 17.  I have seen that it sometimes is 1.7
+2. Ensure the maven.compiler.source matches your installed version of java.  In the lab it is 17.  I have seen that it sometimes is 1.7 in the pom file.
 
 ```xml
   <properties>
