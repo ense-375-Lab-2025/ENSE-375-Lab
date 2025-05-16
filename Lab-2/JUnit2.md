@@ -159,17 +159,19 @@ Once installed, **reload** VSCode if prompted.
 1. Open **VSCode**:  
    One the left menu click the Folders icon.
 
-2. Click Create Java Project
+2. Click Create Java Project.
 
-3. Select:
+3. Selest the Project Type Maven. 
+
+4. Select:
    - **Archetype**: Choose `maven-archetype-quickstart`
    - **Version**: Use the latest
    - **Group Id**: `com.example`
    - **Artifact Id**: `junit-tutorial`
 
-4. Choose a folder to save the project.
-5. Select the default 'version'
-6. Confirm your configured properties.
+5. Choose a folder to save the project.
+6. Select the default 'version'
+7. Confirm your configured properties.
 
 ✅ VSCode will automatically prompt to open the newly created project.
 
