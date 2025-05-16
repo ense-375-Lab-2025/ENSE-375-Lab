@@ -237,7 +237,7 @@ public class Calculator {
     ...
 }
 ```
-In order to create javadocs from the command line use the following command:
+In order to create javadocs first create a doc folder at the root of your project.  Then from the command line use the following command:
 
 ```bash
 javadoc -d doc -sourcepath src -subpackages your.package.name
