@@ -71,7 +71,7 @@ Make sure you have the following installed:
 ---
 
 ## Calculator Assignment example.
-The first lab assignment you have is to make sure that you can click the link on URCourses and access the assignent through our GitHub classroom.  Clone the template repository to use and make sure you can run through the sample.
+The first lab assignment you have is to make sure that you can click the link on URCourses and access the Calculator Example through our GitHub classroom.  Clone the template repository to use and make sure you can run through the sample.
 
 ## 📁 Project Structure
 Here's a simple structure for your project:
