@@ -243,6 +243,12 @@ In order to create javadocs first create a doc folder at the root of your projec
 javadoc -d doc -sourcepath src -subpackages your.package.name
 
 ```
+If you do not have any package names you could simply:
+
+```bash
+javadoc -d doc ./src/*.java
+
+```
 #### Replace:
 - doc with the output directory you want for the HTML files.
 - src with the path to your source folder.
