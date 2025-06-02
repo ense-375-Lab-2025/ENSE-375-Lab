@@ -179,8 +179,9 @@ Once installed, **reload** VSCode if prompted.
 
 ### 📦 Step 3: Ensure the proper JDK version.
 
-1. In the **Explorer** (left sidebar), open `pom.xml`.
-2. Ensure the maven.compiler.source matches your installed version of java.  In the lab it is 17.  I have seen that it sometimes is 1.7 in the pom file.
+1. Find out what version of java you have by java -version.
+2. In the **Explorer** (left sidebar), open `pom.xml`.
+3. For the lab machines, ensure the maven.compiler.source matches your installed version of java.  In the lab it is 17.  I have seen that it sometimes is 1.7 in the pom file.
 
 ```xml
   <properties>
@@ -219,7 +220,7 @@ This ensures Maven downloads all dependencies.
 4. In the **Maven Projects** view (click the **M** icon in the sidebar), right-click your project and select:
    - `Reload Project` or `Update Project`
 
-This ensures Maven downloads all dependencies.
+This ensures Maven downloads all dependencies.  If you use the command line use mvn clean install.  This will update all dependencies.
 
 ---
 Have to edit the following....
@@ -242,7 +243,7 @@ Have to edit the following....
 
 1. Inside any test method, right-click and choose:
    - **Run Test** or **Debug Test**
-
+2. If you want to use the command line then: mvn test
 VSCode will show test results in the **Test Output Panel**.
 
 ---
