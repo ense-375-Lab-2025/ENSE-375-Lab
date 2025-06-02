@@ -223,13 +223,19 @@ This ensures Maven downloads all dependencies.
 This ensures Maven downloads all dependencies.  If you use the command line use `mvn clean install`.  This will update all dependencies.
 
 ---
-Have to edit the following....
-
----
 
 ## 🧪 Step 5: Run the default test.
 
 1. In the folder: `src/test/java/com/example/`, open `AppTest.java`.
+2. Notice you will get an error due to that this test is trying to use JUnit 4.
+3. Update the to JUnit version 5.
+
+Update the import statements:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+```
 
 ## ▶️ Step 6: Run the Tests from VSCode (No CLI)
 
@@ -249,9 +255,6 @@ Have to edit the following....
 VSCode will show test results in the **Test Output Panel**.
 
 ---
-
-## 🎉 Done!
-
 
 ## Assignment
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
