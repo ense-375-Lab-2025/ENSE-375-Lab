@@ -220,7 +220,7 @@ This ensures Maven downloads all dependencies.
 4. In the **Maven Projects** view (click the **M** icon in the sidebar), right-click your project and select:
    - `Reload Project` or `Update Project`
 
-This ensures Maven downloads all dependencies.  If you use the command line use mvn clean install.  This will update all dependencies.
+This ensures Maven downloads all dependencies.  If you use the command line use `mvn clean install`.  This will update all dependencies.
 
 ---
 Have to edit the following....
@@ -243,7 +243,9 @@ Have to edit the following....
 
 1. Inside any test method, right-click and choose:
    - **Run Test** or **Debug Test**
-2. If you want to use the command line then: mvn test
+2. If you want to use the command line then: `mvn test`
+
+   
 VSCode will show test results in the **Test Output Panel**.
 
 ---
