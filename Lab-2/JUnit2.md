@@ -355,7 +355,7 @@ You are to create a **Movie Recommender Application** in Java using Maven as a b
 - JDBC to store movies, add and delete them.
 - The ability to recommend movies based on genre.
 - Import a Movie.csv to fill the database.
--  
+  
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
 
 
