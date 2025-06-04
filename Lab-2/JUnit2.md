@@ -159,17 +159,19 @@ Once installed, **reload** VSCode if prompted.
 1. Open **VSCode**:  
    One the left menu click the Folders icon.
 
-2. Click Create Java Project
+2. Click Create Java Project.
 
-3. Select:
+3. Selest the Project Type Maven. 
+
+4. Select:
    - **Archetype**: Choose `maven-archetype-quickstart`
    - **Version**: Use the latest
    - **Group Id**: `com.example`
    - **Artifact Id**: `junit-tutorial`
 
-4. Choose a folder to save the project.
-5. Select the default 'version'
-6. Confirm your configured properties.
+5. Choose a folder to save the project.
+6. Select the default 'version'
+7. Confirm your configured properties.
 
 ✅ VSCode will automatically prompt to open the newly created project.
 
@@ -177,8 +179,9 @@ Once installed, **reload** VSCode if prompted.
 
 ### 📦 Step 3: Ensure the proper JDK version.
 
-1. In the **Explorer** (left sidebar), open `pom.xml`.
-2. Ensure the maven.compiler.source is 17.  I have seen that it sometimes is 1.7
+1. Find out what version of java you have by java -version.
+2. In the **Explorer** (left sidebar), open `pom.xml`.
+3. For the lab machines, ensure the maven.compiler.source matches your installed version of java.  In the lab it is 17.  I have seen that it sometimes is 1.7 in the pom file.
 
 ```xml
   <properties>
@@ -217,16 +220,22 @@ This ensures Maven downloads all dependencies.
 4. In the **Maven Projects** view (click the **M** icon in the sidebar), right-click your project and select:
    - `Reload Project` or `Update Project`
 
-This ensures Maven downloads all dependencies.
-
----
-Have to edit the following....
+This ensures Maven downloads all dependencies.  If you use the command line use `mvn clean install`.  This will update all dependencies.
 
 ---
 
 ## 🧪 Step 5: Run the default test.
 
 1. In the folder: `src/test/java/com/example/`, open `AppTest.java`.
+2. Notice you will get an error due to that this test is trying to use JUnit 4.
+3. Update the to JUnit version 5.
+
+Update the import statements:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+```
 
 ## ▶️ Step 6: Run the Tests from VSCode (No CLI)
 
@@ -241,15 +250,110 @@ Have to edit the following....
 1. Inside any test method, right-click and choose:
    - **Run Test** or **Debug Test**
 
+### Option 3: Command line  
+1. If you want to use the command line then: 
+   - `mvn test`
+
+   
 VSCode will show test results in the **Test Output Panel**.
 
 ---
+## 📘 What is JDBC?
 
-## 🎉 Done!
+**JDBC** stands for **Java Database Connectivity** — it’s a **Java API** that allows Java programs to connect to and interact with **relational databases** like:
 
+- SQLite
+- MySQL
+- PostgreSQL
+- Oracle
+- SQL Server
+
+---
+
+## 🔧 What JDBC Lets You Do
+
+Using JDBC, you can:
+- **Connect** to a database
+- **Run SQL queries** (`SELECT`, `INSERT`, `UPDATE`, `DELETE`)
+- **Read results** from queries
+- Handle **transactions**
+- **Close resources** safely (connections, statements, result sets)
+
+---
+
+## 📦 Key JDBC Classes
+
+| Class/Interface          | Description                                |
+|--------------------------|--------------------------------------------|
+| `DriverManager`          | Establishes connection to the DB           |
+| `Connection`             | Represents a connection to a DB            |
+| `Statement` / `PreparedStatement` | Executes SQL commands           |
+| `ResultSet`              | Holds query results (`SELECT` statements)  |
+
+---
+
+## ✅ Example: JDBC with SQLite
+
+```java
+import java.sql.*;
+
+public class Example {
+    public static void main(String[] args) {
+        String url = "jdbc:sqlite:sample.db";
+
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt = conn.createStatement()) {
+
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (id INTEGER, name TEXT)");
+            stmt.executeUpdate("INSERT INTO users (id, name) VALUES (1, 'Alice')");
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+            while (rs.next()) {
+                System.out.println(rs.getInt("id") + ": " + rs.getString("name"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
+## 💡 JDBC Drivers
+
+JDBC works with **drivers** — small Java libraries specific to each database system. For SQLite, add this to your pom.xml file:
+
+```xml
+<dependency>
+  <groupId>org.xerial</groupId>
+  <artifactId>sqlite-jdbc</artifactId>
+  <version>3.42.0.0</version>
+</dependency>
+```
+---
+
+## 🛠️ After Adding the Dependency
+
+1. Save `pom.xml`
+2. In terminal, run:
+
+```bash
+mvn clean compile
+```
+
+3. To run tests:
+
+```bash
+mvn test
+```
+---
 
 ## Assignment
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
+
+
 
 ## Deliverables
 Use the link to the Lab 2 Assignment on URCourses.  

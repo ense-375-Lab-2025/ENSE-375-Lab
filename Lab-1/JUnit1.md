@@ -71,7 +71,7 @@ Make sure you have the following installed:
 ---
 
 ## Calculator Assignment example.
-The first lab assignment you have is to make sure that you can click the link on URCourses and access the assignent through our GitHub classroom.  Clone the template repository to use and make sure you can run through the sample.
+The first lab assignment you have is to make sure that you can click the link on URCourses and access the Calculator Example through our GitHub classroom.  Clone the template repository to use and make sure you can run through the sample.
 
 ## 📁 Project Structure
 Here's a simple structure for your project:
@@ -237,10 +237,16 @@ public class Calculator {
     ...
 }
 ```
-In order to create javadocs from the command line use the following command:
+In order to create javadocs first create a doc folder at the root of your project.  Then from the command line use the following command:
 
 ```bash
 javadoc -d doc -sourcepath src -subpackages your.package.name
+
+```
+If you do not have any package names you could simply:
+
+```bash
+javadoc -d doc ./src/*.java
 
 ```
 #### Replace:
