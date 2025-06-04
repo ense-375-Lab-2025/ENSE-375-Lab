@@ -133,7 +133,7 @@ void tearDown() {
 
 ---
 ## Procedure
-You are to create a **Movie Recommender Simulation** in Java using Maven as a build environment and JUnit to test the application.
+
 
 ### 🔧 Step 1: Install Required Extensions in VSCode
 
@@ -351,9 +351,24 @@ mvn test
 ---
 
 ## Assignment
+You are to create a **Movie Recommender Application** in Java using Maven as a build environment and JUnit to test the application you have created. The following functionality must exist:
+- JDBC to store movies, add and delete them.
+- The ability to recommend movies based on genre.
+- Import a Movie.csv to fill the database.
+-  
 You are to create **JUnit tests** in order to test the functionality of the design. There is no need to create any UI. Just create the tests. Also, there is no need to create tests for something as simple as setters and getters. Just test your application when there is logic functionality. 
 
 
+## 📦 Prerequisites
+For the lab machines and perhaps your own you need to perform the following:
+- [Maven](https://maven.apache.org)  Download the Binary archive.
+- Students do not have access to modifying the system PATH or creating system environment variables.  You can modify your variables however.
+- **JAVA_HOME** Create a JAVA_HOME variable and point it to: C:\jdk-17.0.1
+Add to the PATH
+  - **CMD** C:\Windows\System32
+  - **Java** %JAVA_HOME%
+  - **Maven** Path to Maven bin directory.
+---
 
 ## Deliverables
 Use the link to the Lab 2 Assignment on URCourses.  
