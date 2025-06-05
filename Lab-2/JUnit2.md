@@ -156,22 +156,23 @@ Once installed, **reload** VSCode if prompted.
 ---
 ### 🧱 Step 2: Create a Maven Project (No Terminal)
 
-1. Open **VSCode**:  
+1. Install Apache Maven and put the bin directory in your path.
+2. Open **VSCode**:  
    One the left menu click the Folders icon.
 
-2. Click Create Java Project.
+3. Click Create Java Project.
 
-3. Selest the Project Type Maven. 
+4. Selest the Project Type Maven. 
 
-4. Select:
+5. Select:
    - **Archetype**: Choose `maven-archetype-quickstart`
    - **Version**: Use the latest
    - **Group Id**: `com.example`
    - **Artifact Id**: `junit-tutorial`
 
-5. Choose a folder to save the project.
-6. Select the default 'version'
-7. Confirm your configured properties.
+6. Choose a folder to save the project.
+7. Select the default 'version'
+8. Confirm your configured properties.
 
 ✅ VSCode will automatically prompt to open the newly created project.
 
