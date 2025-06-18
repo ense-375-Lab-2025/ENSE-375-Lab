@@ -66,7 +66,7 @@ Assume users can enter dates of the following format:
 
 Using Test-Driven Development, write a program which takes in one of these as an input, and returns a boolean indicating if the date is valid.
 
-Let's set up our project in VSCode named DateValidator.  You can use Maven if you like but not required.
+Click on the assignment link on URCourses to create your asseignmnet repositoyr.  Now setup your project in VSCode named DateValidator.  You can use Maven if you like but not required.
 
 ### Red... Green... Refactor... Round 1
 
@@ -462,3 +462,300 @@ Some common refactoring operations:
 ---
 
 Run your tests. Did you break anything? Nope. Cool. This is part of the power of refactoring, it allows us to modify our code significantly while maintaining confidence we haven't lost any key functionality. Let's try to tackle that extra case with the separators between the days, months and years.
+
+## Red... Green... Refactor... Round 6
+
+```java
+    @Test
+    public void Validate_TodaySeparated_True(){
+        DateValidator dateValidator = new DateValidator();
+        boolean legalDate = dateValidator.validate("02/04/2021");
+        assertTrue(legalDate);
+    }
+```
+
+Run tests. Fail. Cool...
+
+So how do we fix this? Well, we can notice two things, first that dates of these formats always have ten digits, and two that the same data is encoded, just with different offsets. We want to reuse as much existing code as possible, so what's our smallest change to make it valid?
+
+```java
+public class DateValidator {
+
+    private boolean checkIllegalDays(int month, int day, int year){
+        return 
+        // obviously illegal
+        day >= 32 || month >= 13 ||
+        // not obviously illegal
+        ( month == 2  && day == 31 ) ||
+        ( month == 4  && day == 31 ) ||
+        ( month == 6  && day == 31 ) ||
+        ( month == 9  && day == 31 ) ||
+        ( month == 11 && day == 31 ) ||
+        ( month == 2  && day == 30 ) ||
+        //illegal...                   except on leap years
+        ( month == 2  && day == 29 && (year % 4 != 0));
+    }
+
+    public boolean validate(String date){
+
+        String mm, dd, yyyy;
+        if (date.length() == 8){
+
+            mm = date.substring(0,2);
+            dd = date.substring(2,4);
+            yyyy = date.substring(4,8);
+
+        } else if (date.length() == 10) {
+
+            mm = date.substring(0,2);
+            dd = date.substring(3,5);
+            yyyy = date.substring(6,10);
+
+        } else {
+            return false;
+        }
+
+        int month = Integer.parseInt(mm);
+        int day   = Integer.parseInt(dd);
+        int year  = Integer.parseInt(yyyy);
+
+        if ( checkIllegalDays(month, day, year) ) {
+                return false;
+        } else {
+            return true;
+        }
+    }
+}
+```
+
+We can do a small refactor...
+
+```java
+public class DateValidator {
+
+    private boolean checkIllegalDays(int month, int day, int year){
+        return 
+        // obviously illegal
+        day >= 32 || month >= 13 ||
+        // not obviously illegal
+        ( month == 2  && day == 31 ) ||
+        ( month == 4  && day == 31 ) ||
+        ( month == 6  && day == 31 ) ||
+        ( month == 9  && day == 31 ) ||
+        ( month == 11 && day == 31 ) ||
+        ( month == 2  && day == 30 ) ||
+        //illegal...                   except on leap years
+        ( month == 2  && day == 29 && (year % 4 != 0));
+    }
+
+    public boolean validate(String date){
+
+        String mm, dd, yyyy;
+        if (date.length() == 8){
+
+            mm = date.substring(0,2);
+            dd = date.substring(2,4);
+            yyyy = date.substring(4,8);
+
+        } else if (date.length() == 10) {
+
+            mm = date.substring(0,2);
+            dd = date.substring(3,5);
+            yyyy = date.substring(6,10);
+
+        } else {
+            return false;
+        }
+
+        int month = Integer.parseInt(mm);
+        int day   = Integer.parseInt(dd);
+        int year  = Integer.parseInt(yyyy);
+
+        return checkIllegalDays(month, day, year);
+    }
+}
+```
+
+This implementation is somewhat forgiving, in that the separator character can be anything, and might not even match. Let's add a test to add just a bit more reliability in that they have to match, even if we don't care what they are. Let's make a test to unsure that this isn't the case.
+
+## Red... Green... Refactor... Round 7
+
+```java
+    @Test
+    public void Validate_TodaySeparatorsMismatch_False(){
+        DateValidator dateValidator = new DateValidator();
+        boolean illegalDate = dateValidator.validate("06/20-2025");
+        assertFalse(illegalDate);
+    }
+```
+Compile tests and run. Failure. Good.
+
+Now to fix it...
+
+```java
+public class DateValidator {
+
+    private boolean isDateIllegal(int month, int day, int year){
+        return 
+        // obviously illegal
+        day >= 32 || month >= 13 ||
+        // not obviously illegal
+        ( month == 2  && day == 31 ) ||
+        ( month == 4  && day == 31 ) ||
+        ( month == 6  && day == 31 ) ||
+        ( month == 9  && day == 31 ) ||
+        ( month == 11 && day == 31 ) ||
+        ( month == 2  && day == 30 ) ||
+        //illegal...           except on leap years
+        ( month == 2  && day == 29 && (year % 4 != 0));
+    }
+
+    public boolean validate(String date){
+
+        String mm, dd, yyyy;
+        if (date.length() == 8){
+
+            mm = date.substring(0,2);
+            dd = date.substring(2,4);
+            yyyy = date.substring(4,8);
+
+        } else if (date.length() == 10) {
+
+            String letter2 =  date.substring(2,3);
+            String letter5 =  date.substring(5,6);
+
+            if (!letter2.equals(letter5)) {
+                return false;
+            }
+
+            mm = date.substring(0,2);
+            dd = date.substring(3,5);
+            yyyy = date.substring(6,10);
+
+        } else {
+            return false;
+        }
+
+        int month = Integer.parseInt(mm);
+        int day   = Integer.parseInt(dd);
+        int year  = Integer.parseInt(yyyy);
+
+        return ! isDateIllegal(month, day, year);
+
+    }
+}
+```
+
+Compile, run tests, should pass. Good! This forgiving format is likely fine, as it allows users to choose their separator of choice, and will still be likely to catch some typos.
+
+## Red... Green... Refactor... Round 8
+
+Finally, what if the user entered in a junk string of 8 or 10 characters? In either of these cases, our system should return false.
+
+Let's make some tests...
+
+```java
+    @Test
+    public void Validate_NonNumeric8_False(){
+        DateValidator dateValidator = new DateValidator();
+        boolean illegalDate = dateValidator.validate("abcdefgh");
+        assertFalse(illegalDate);
+    }
+```
+
+More tests!...
+
+```java
+    @Test
+    public void Validate_NonNumeric10_False(){
+        DateValidator dateValidator = new DateValidator();
+        boolean illegalDate = dateValidator.validate("ab/cd/efgh");
+        assertFalse(illegalDate);
+    }
+```
+
+You should try to implement this functionality.
+
+We've now done several iterations. You should have a pretty good idea how the process works. Time to try it yourself...
+
+---
+
+## Assignment
+
+Your assignment is to continue and extend this application, using Test Driven Development, but add in another combination of date formats:
+
+```
+"Friday, June 20, 2025"
+```
+
+or
+
+```
+"Fri, June 20, 2025"
+```
+That is, validate dates which include the weekday and the month as words, in both a long or abbreviated format, or a combination thereof.
+
+The Weekday must match the day it would appear as on a modern western (Gregorian) calendar.
+
+i.e. 
+
+```
+"Friday, June 20, 2025"
+```
+
+Is a legal date, because this is a valid date, with the correct weekday, however, 
+
+```
+"Thursday, June 20, 2025"
+```
+
+Is not a legal date, because even though the date is valid, the weekday is wrong.
+
+Of course, illegal dates must be rejected, regardless of the given weekday.
+
+Hint: You may investigate using an internal Java class for doing this, or attempt to adapt the [algorithm listed here](https://cs.uwaterloo.ca/~alopez-o/math-faq/node73.html).
+
+A list of legal words and abbreviations which are allowed are listed here:
+
+Weekdays
+
+|Long Name   |Short Name   |
+|---|---|
+|Sunday   |Sun   |
+|Monday   |Mon   |
+|Tuesday   |Tues   |
+|Wednesday   |Wed   |
+|Thursday   |Thurs   |
+|Friday   |Fri   |
+|Saturday   |Sat   |
+
+
+Months
+
+|Long Name   |Common Short Names   |
+|---|---|
+|January   |Jan   |
+|February   |Feb   |
+|March   |Mar   |
+|April   |Apr   |
+|May   |May   |
+|June   |Jun   |
+|July   |Jul   |
+|August   |Aug   |
+|September   |Sep   |
+|October   |Oct   |
+|November   |Nov   |
+|December   |Dec   |
+
+Remember - the purpose is to learn Test Driven Development, so ensure that you are writing your tests first, don't write code until you have a corresponding test case, and always cycling through: Red, Green, Refactor.
+
+---
+
+## Submission
+Nothing to submit because you are using your GitHub repository.
+
+## References
+
+M. Greencroft, [Practical Test-Driven Development for Java Programmers](https://www.lynda.com/Software-Development-tutorials/Practical-Test-Driven-Development-Java-Programmers/777389-2.html), Lynda from LinkedIn, 2018.
+
+R. Osherove, [Naming standards for unit tests](https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html), Agile & XP Consulting and Training, 2005.
