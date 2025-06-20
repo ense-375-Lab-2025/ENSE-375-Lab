@@ -55,7 +55,7 @@ In summary, **TDD helps developers write reliable, maintainable code by making t
 
 ## Project Setup
 
-Test-Driven Development is best learned through experience. Thus, we will work together on a sample application: Date Validation
+Test-Driven Development is best learned through experience. Thus, work through a sample application: Date Validation
 
 Assume users can enter dates of the following format:
 
@@ -66,7 +66,7 @@ Assume users can enter dates of the following format:
 
 Using Test-Driven Development, write a program which takes in one of these as an input, and returns a boolean indicating if the date is valid.
 
-Click on the assignment link on URCourses to create your asseignmnet repositoyr.  Now setup your project in VSCode named DateValidator.  You can use Maven if you like but not required.
+Click on the assignment link on URCourses to create your assignment repository.  Now setup your project in VSCode named DateValidator.  You can use Maven if you like but not required.
 
 ### Red... Green... Refactor... Round 1
 
