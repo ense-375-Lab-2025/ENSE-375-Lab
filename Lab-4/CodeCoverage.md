@@ -1,5 +1,11 @@
 # Java Code Coverage Testing in VS Code (Built-in Tool)
 
+## What is Code Coverage?
+Code coverage is a measure used to describe the degree to which the source code of a program is tested by a particular test suite.
+
+- A program with **high code coverage** has been more thoroughly tested and has a lower chance of containing software bugs.
+- A program with **low code coverage** is less tested and more prone to undetected issues.
+
 This tutorial explains how to use the built-in **Java Test Runner** and **code coverage tool** included in the **Java Extension Pack** for Visual Studio Code (VS Code).
 
 ## Prerequisites
