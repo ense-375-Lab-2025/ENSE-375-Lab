@@ -89,10 +89,10 @@ This is a clean and simple setup for most standalone or classroom Java projects.
   - 6 Defencemen
   - 2 Goaltender
 
-In order to play a game, the teams must have this exact roster or a game cannot be played.  Your job is to create the application and the support JUnit test code to test its functionality.
+In order to play a game, the teams must have this exact roster or a game cannot be played.  Your job is to create the application and the supporting JUnit test code to test its functionality.  You are also to use the testing code coverage tool to ensure your source code is being tested appropriately.
 
 ### Procedure
-Create the 6 original team rosters for the NHL.  A sample is given to you in the res folder of this lab.  A framework for the application is also given to you and are free to use and modify.  Create a class diagram from this code or create your own.  
+Create the 6 original team rosters for the NHL.  A sample is given to you in the res folder of this lab.  A framework for the application is also given to you and you are free to use and modify.  Create a class diagram from this code or create your own.  
 
 ### Requirements
   - Load the CSV files into your Hockey League.
@@ -100,5 +100,6 @@ Create the 6 original team rosters for the NHL.  A sample is given to you in the
   - Add a player to the team roster.
   - Delete a player from the team roster.
   - Edit a players rating.
-	- Ensure that you are getting appropriate overall testing code coverage (above 80\%) of the classes you care about using the code coverage tool.
+  - Play a game.
+  - Ensure that you are getting appropriate overall testing code coverage (above 80\%) of the classes you care about using the code coverage tool.
 
