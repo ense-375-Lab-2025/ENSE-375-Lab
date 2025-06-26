@@ -81,34 +81,24 @@ This is a clean and simple setup for most standalone or classroom Java projects.
 ## Assignment
 
 ### Background
- This project is an attempt to determine which hockey team will win a game.  If done right, maybe 
-Vegas can be taken down.  The Hockey League Simulator consists of the original 6 NHL teams. The initial data for the rosters will come from text 
-files. The roster for a team must have:
+ This project is an attempt to determine which hockey team will win a game.  If done right, maybe Vegas can be taken down.  The Hockey League Simulator consists of the original 6 NHL teams. The initial data for the rosters need to be built and must consist of:
 
-  -  3 Centermen
-  - 3 Right Wingers
-  - 3 Left Wingers
+  - 4 Centermen
+  - 4 Right Wingers
+  - 4 Left Wingers
   - 6 Defencemen
-  - 1 Goaltender
+  - 2 Goaltender
 
-In order to play a game, the teams must have this exact roster or a game cannot be played.  You are given the project to test and you will soon 
-discover that there are bugs.   One problem is the rosters are not saved to disk at the moment (No Persistence).  
+In order to play a game, the teams must have this exact roster or a game cannot be played.  Your job is to create the application and the support JUnit test code to test its functionality.
 
 ### Procedure
-Download the Eclipse project from URCourses.  First take a look at the code and create a Class Diagram
-based on what you find. Come up with a method of what Classes to test first in order to find the bugs as they
-can be anywhere.  Also, read the headers of the methods that indicate what the methods do and any parameters, returns or conditions 
-the methods require.  Use JUnit and EclEmma as your testing tools.  You may treat the CSVWriter and 
-CSVReader files as library files and do not need to be tested.  You do not have to implement the 
-functionality to save rosters to disk.
+Create the 6 original team rosters for the NHL.  A sample is given to you in the res folder of this lab.  A framework for the application is also given to you and are free to use and modify.  Create a class diagram from this code or create your own.  
 
 ### Requirements
+  - Load the CSV files into your Hockey League.
+  - Store the data in a database.
+  - Add a player to the team roster.
+  - Delete a player from the team roster.
+  - Edit a players rating.
+	- Ensure that you are getting appropriate overall testing code coverage (above 80\%) of the classes you care about using the code coverage tool.
 
-	- Import the EclEmma plugin if needed.
-	- Write JUnit test cases and discover the bugs and FIX them!
-	- Export your Eclipse project and submit to URCourses.
-	-  Ensure that you are getting appropriate overall code coverage (above 80\%) of the classes you care
-  about using the code coverage tool.
-
-### Deliverables
-Zip your new Application and submit to URCourses.
