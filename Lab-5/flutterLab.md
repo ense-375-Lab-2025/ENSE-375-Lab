@@ -678,8 +678,8 @@ Phase 2: User Acceptance Testing matrix
 Create and complete an User Acceptance Testing matrix, similar to the one shown in the previous section. Include tests for both happy paths and unhappy paths. You may wish to confirm with another BMI calculator, e.g. an online one, to see that your computed values are correct.
 
 ## Submission
+Nothing to submit because you are using your GitHub repository.
 
-Please submit your assignment to URCourses by the due date. Please include your test matrix as a markdown table, or as a pdf. For dart, please only include your `.dart` files, e.g. main.dart and bmi.dart.
 
 ---
 
