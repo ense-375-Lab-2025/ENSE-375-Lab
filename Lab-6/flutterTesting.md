@@ -294,7 +294,7 @@ import '../lib/bmi.dart';
 
 void main() {
   group('Testing BMI', () {
-    testWidgets('BMI page should have a certain Title', (tester) async {
+    testWidgets('BMI page should have a certain Title', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: BMI()));
 
       final titleFinder = find.text('BMI Calculator');
@@ -316,7 +316,7 @@ We have numerous text fields to verify also:
 in `bmi_test.dart`
 
 ```dart
-    testWidgets('BMI page should height text', (tester) async {
+    testWidgets('BMI page should height text', (WidgetTester tester) async {
       await tester.pumpWidget(const MaterialApp(home: BMI()));
 
       final titleFinder = find.text('height in cm');
@@ -365,7 +365,7 @@ in `bmi_test.dart`
 
 Now enter a value of 90 into the weight field.
 
-Since we have an **OutlinedButton** find it using **byType()** and give it a **tap()**.
+Since we have an **OutlinedButton** find it using **byType()** and give it a **tap()**.  We could also look for the text **Calculate**.
 
 Done forget to rebuild the **Widget** tree by calling the **pump()** method.
 
@@ -376,7 +376,7 @@ Done forget to rebuild the **Widget** tree by calling the **pump()** method.
 in `bmi_test.dart`
 
 ```dart
-    //tap the button
+    //tap the button.  You could also look for the Calculate text.
     await tester.tap(find.byType(OutlinedButton));
     //Rebuild the Widget
     await tester.pump();
